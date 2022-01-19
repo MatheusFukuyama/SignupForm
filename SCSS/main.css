@@ -1,0 +1,273 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+:root {
+  --clr-primary-700: hsl(0, 100%, 74%);
+  --clr-primary-600: hsl(154, 59%, 51%);
+  --clr-neutral-700: hsl(249, 10%, 26%);
+  --clr-neutral-600: hsl(246, 25%, 77%);
+  --clr-neutral-100: #fff;
+  --clr-accent-700: hsl(248, 32%, 49%);
+  --clr-shaddow-700: hsl(249, 10%, 26%, 0.15);
+  --ff-primary: "Poppins", sans-serif;
+  --fs-900: 3.125rem;
+  --fs-800: 2.5rem;
+  --fs-700: 1.5rem;
+  --fs-600: 1.125rem;
+  --fs-500: 1rem;
+  --fs-400: .75rem;
+  --fs-300: 0.6875rem;
+  --fs-200: .625rem;
+}
+
+html {
+  display: flex;
+  justify-content: center;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 2rem;
+  width: 1440px;
+  min-height: 100vh;
+  background-color: var(--clr-primary-700);
+  background-image: url(../images/bg-intro-desktop.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: var(--ff-primary);
+  font-size: var(-fs-500);
+  color: var(--clr-neutral-100);
+  overflow-y: scroll;
+}
+@media screen and (max-width: 775px) {
+  body {
+    padding: 4rem 2rem;
+  }
+}
+
+h1 {
+  font-size: var(--fs-900);
+  font-weight: 700;
+  max-width: 30ch;
+  margin-bottom: 2rem;
+}
+@media screen and (max-width: 775px) {
+  h1 {
+    font-size: var(--fs-700);
+    text-align: center;
+    max-width: none;
+  }
+}
+
+.lead {
+  max-width: 50ch;
+  line-height: 1.5rem;
+}
+@media screen and (max-width: 775px) {
+  .lead {
+    text-align: center;
+  }
+}
+
+input {
+  display: block;
+  outline: none;
+  width: 100%;
+  padding: 1.2rem 2rem;
+  border: 1px solid var(--clr-neutral-600);
+  border-radius: 0.3125rem;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+::placeholder {
+  font-weight: bold;
+}
+
+button {
+  padding: 1rem 1.5rem;
+  width: 100%;
+  border: none;
+  border-radius: 0.3125rem;
+  background-color: var(--clr-primary-600);
+  text-transform: uppercase;
+  font-family: var(--ff-primary);
+  font-size: var(--fs-500);
+  font-weight: 600;
+  color: var(--clr-neutral-100);
+  margin-bottom: 1rem;
+}
+@media screen and (max-width: 775px) {
+  button {
+    font-size: var(--fs-400);
+  }
+}
+
+.inpt {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.error-inpt {
+  margin-bottom: 1.25rem;
+}
+
+.error-icon {
+  position: absolute;
+  padding-right: 1.5rem;
+  display: none;
+}
+
+.error-format {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 0.5rem;
+}
+
+.msg-err {
+  color: var(--clr-primary-700);
+  font-size: var(--fs-300);
+  font-style: italic;
+  font-weight: 500;
+}
+
+footer {
+  display: none;
+}
+
+main {
+  display: grid;
+  grid-template-columns: minmax(340px, 505px) minmax(340px, 540px);
+  grid-template-rows: auto auto;
+  grid-template-areas: "message free" "message form";
+  column-gap: 4.5rem;
+  row-gap: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+@media screen and (max-width: 775px) {
+  main {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.free {
+  grid-area: free;
+  padding: 1.5rem 0;
+  border-radius: 0.625rem;
+  background-color: var(--clr-accent-700);
+  box-shadow: 0 0.5rem 0 0 var(--clr-shaddow-700);
+}
+.free p {
+  text-align: center;
+}
+.free p span {
+  font-weight: 600;
+}
+@media screen and (max-width: 775px) {
+  .free p {
+    max-width: 20ch;
+    line-height: 1.75rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.message {
+  display: flex;
+  align-items: center;
+  grid-area: message;
+}
+.message .wrap {
+  margin-left: auto;
+}
+
+.card-form {
+  grid-area: form;
+  padding: 2.5rem;
+  border-radius: 0.625rem;
+  background-color: var(--clr-neutral-100);
+  box-shadow: 0 0.5rem 0 0 var(--clr-shaddow-700);
+  margin-bottom: 1rem;
+}
+.card-form p {
+  color: var(--clr-neutral-600);
+  font-size: var(--fs-300);
+  text-align: center;
+}
+@media screen and (max-width: 775px) {
+  .card-form p {
+    font-size: var(--fs-200);
+    line-height: 1rem;
+    max-width: 35ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.card-form a {
+  color: var(--clr-primary-700);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+/*# sourceMappingURL=main.css.map */

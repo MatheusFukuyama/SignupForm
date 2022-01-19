@@ -1,0 +1,118 @@
+html {
+    display: flex;
+    justify-content: center;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 2rem;
+    width: 1440px;
+    min-height: 100vh;
+    background-color: var(--clr-primary-700);
+    background-image: url(../images/bg-intro-desktop.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: var(--ff-primary);
+    font-size: var(-fs-500);
+    color: var(--clr-neutral-100);    
+    overflow-y: scroll;
+
+    @media screen and (max-width: 775px) {
+        padding: 4rem 2rem;
+    }
+}
+
+h1 {
+    font-size: var(--fs-900);
+    font-weight: 700;
+    max-width: 30ch;
+    margin-bottom: 2rem;
+
+    @media screen and (max-width: 775px){
+        font-size: var(--fs-700);
+        text-align: center;
+        max-width: none;
+    }
+}
+
+
+.lead {
+    max-width: 50ch;
+    line-height: 1.5rem;
+
+    @media screen and (max-width: 775px) {
+        text-align: center;
+    }
+}
+
+
+input {
+    display: block;
+    outline: none;
+    width: 100%;
+    padding: 1.2rem 2rem;
+    border: 1px solid var(--clr-neutral-600);
+    border-radius: .3125rem;
+    box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+
+}
+
+::placeholder {
+    font-weight: bold;
+}
+
+button {
+    padding: 1rem 1.5rem;
+    width: 100%;
+    border: none;
+    border-radius: .3125rem;
+    background-color: var(--clr-primary-600);
+    text-transform: uppercase;
+    font-family: var(--ff-primary);
+    font-size: var(--fs-500);
+    font-weight: 600;
+    color: var(--clr-neutral-100);
+    margin-bottom: 1rem;
+
+    @media screen and (max-width: 775px) {
+        font-size: var(--fs-400);
+    }
+}
+
+.inpt {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.error-inpt {
+    margin-bottom: 1.25rem;
+}
+
+.error-icon {
+    position: absolute;
+    padding-right: 1.5rem;
+    display: none;
+}
+
+.error-format {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: .5rem;
+}
+
+.msg-err {
+    color: var(--clr-primary-700);
+    font-size: var(--fs-300);
+    font-style: italic;
+    font-weight: 500;
+}
+
+footer {
+    display: none;
+}

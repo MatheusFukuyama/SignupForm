@@ -1,0 +1,81 @@
+main {
+    display: grid;
+    grid-template-columns: minmax(340px, 505px) minmax(340px, 540px);
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+    "message free"
+    "message form";
+    column-gap: 4.5rem;
+    row-gap: 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+
+    @media screen and (max-width: 775px) {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.free {
+    grid-area: free;
+    padding: 1.5rem 0;
+    border-radius: .625rem;
+    background-color: var(--clr-accent-700);
+    box-shadow: 0 0.5rem 0 0 var(--clr-shaddow-700);
+    
+    p {
+        text-align: center;
+
+        span {
+            font-weight: 600;
+        }
+
+        @media screen and (max-width: 775px) {
+            max-width: 20ch;
+            line-height: 1.75rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}
+.message {
+    display: flex;
+    align-items: center;
+    grid-area: message;
+
+    .wrap {
+        margin-left: auto;
+    }
+   
+}
+
+.card-form {
+    grid-area: form;
+    padding: 2.5rem;
+    border-radius: .625rem;
+    background-color: var(--clr-neutral-100);
+    box-shadow: 0 0.5rem 0 0 var(--clr-shaddow-700);
+    margin-bottom: 1rem;
+
+    p {
+        color: var(--clr-neutral-600);
+        font-size: var(--fs-300);
+        text-align: center;
+
+        @media screen and (max-width: 775px) {
+            font-size: var(--fs-200);
+            line-height: 1rem;
+            max-width: 35ch;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    a {
+        color: var(--clr-primary-700);
+        text-decoration: none;
+        font-weight: 700;
+    }
+}
